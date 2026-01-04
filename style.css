@@ -39,6 +39,26 @@ p {
 
 }
 
+/* these are unique paragraph ids! they allow me to customize the style of those specific paragraph blocks! */
+
+.pID1 {
+
+    text-align: left;
+
+}
+
+.pID2 {
+
+    text-align: right;
+
+}
+
+.pID3 {
+
+    color: hotpink;
+
+}
+
 /* style buttons */
 button {
 
