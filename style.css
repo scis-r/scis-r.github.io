@@ -1,0 +1,56 @@
+/* style the body block (a.k.a the entire webpage) */
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #f0f0f0; /* specifically, text color! */
+    text-align: center; /* this centers all of our text */
+    padding-top: 50px; /* this spaces the body 50 pixels from the top */
+
+}
+
+/* style each heading individually T_T */
+h1 {
+
+    color: #b6ff00;
+    font-size: 36px;
+
+}
+
+h2 {
+
+    color: #ff0000;
+    font-size: 30px;
+
+}
+
+h3 {
+    
+    color: #0026ff;
+    font-size: 24px;
+
+}
+
+/* style our paragraphs */
+p {
+
+    font-size: 18px;
+    line-height: 1.5;
+
+}
+
+/* style buttons */
+button {
+
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: mediumvioletred; /* changes the color of the text inside the button */
+    border: none; /* adds (or in this case, removes) the border from buttons */
+    cursor: pointer; /* changes the cursor's look when it hovers over the button */
+
+}
+
+button:hover {
+    background-color: #eeeeee; /* makes the background color slightly darker when being hovered over */
+}
