@@ -1,7 +1,7 @@
 /* style the body block (a.k.a the entire webpage) */
 body {
 
-    font-family: Arial, sans-serif;
+    font-family: "Lora", sans-serif;
     background-color: #121212;
     color: #f0f0f0; /* specifically, text color! */
     text-align: center; /* this centers all of our text */
@@ -19,7 +19,7 @@ h1 {
 
 h2 {
 
-    color: #ff0000;
+    color: #ff00f0;
     font-size: 30px;
 
 }
@@ -59,6 +59,11 @@ p {
 
 }
 
+/* add the spacer */
+.spacer {
+    height: 600px;
+}
+
 /* style buttons */
 button {
 
@@ -73,4 +78,35 @@ button {
 
 button:hover {
     background-color: #eeeeee; /* makes the background color slightly darker when being hovered over */
+}
+
+/* these are the page structure thingies! */
+
+.header {
+    background-color: firebrick;
+}
+
+.stuff {
+    display: flex; /* ig this is important */
+    gap: 10px;
+}
+
+.left-panel, .right-panel {
+    width: 200px;
+    background-color: wheat;
+    padding: 10px;
+}
+
+.middle-panel {
+    flex: 1;
+    background-color: aquamarine;
+    color: black;
+    padding: 20px;
+}
+
+.footer {
+    margin-top: 10px;
+    background-color: fuchsia;
+    color: black;
+    padding: 10px;
 }

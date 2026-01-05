@@ -1,0 +1,26 @@
+html {
+    min-height: 100%;
+}
+
+body {
+
+    font-family: "Lora", sans-serif;
+
+    background-size: 32px 32px;
+    background-position: center;
+    background-color: #121212;
+
+    color: #362b54;
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+h1 {
+    color: #534678;
+    font-size: 64px;
+}
+
+.across {
+    border: 1px solid #362b54;
+}
