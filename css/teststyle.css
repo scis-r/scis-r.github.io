@@ -87,7 +87,7 @@ button:hover {
 }
 
 .stuff {
-    display: flex; /* ig this is important */
+    display: flex; /* "flex"ible display! blocks fit into each other (kinda, bad explanation i know T_T) */
     gap: 10px;
 }
 
@@ -109,4 +109,58 @@ button:hover {
     background-color: fuchsia;
     color: black;
     padding: 10px;
+}
+
+/* test 2 for formatting */
+
+.oldschool {
+    display: flex;
+}
+
+.oldschool2 {
+    display: flex;
+}
+
+.left-panel2, .right-panel2 {
+    width: 400px;
+    background-color: transparent;
+}
+
+.left-panel2_1 {
+    width: 432px;
+    height: 576px;
+    background-color: transparent;
+}
+
+.right-panel2_1 {
+    width: 432px;
+    height: 816px;
+    background-color: transparent;
+}
+
+.middle-panel2 {
+    flex: 1;
+    background-color: #232323;
+    color: black;
+    padding: 20px;
+}
+
+.middle-panel2_1 {
+    flex: 1;
+    background-color: #232323;
+    color: black;
+    padding: 20px;
+}
+
+
+/* extra styling for oldschool */
+
+.h1_oldschool2 {
+    color: #534678;
+    font-size: 48px;
+}
+
+.p1_oldschool2 {
+    color: #362b54;
+    font-size: 20px;
 }
