@@ -4,7 +4,7 @@ function onClickOne() {
 }
 
 function onClickTwo() {
-    new Audio('sfx/fart.mp3').play();
+    new Audio('../sfx/fart.mp3').play();
 }
 
 // adding the text entry code! this code displays a message "i like (color) too!", and if possible, changes the color of the word to match!
