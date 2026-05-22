@@ -6,13 +6,36 @@ body {
 
     font-family: "Lora", sans-serif;
 
-    background-size: 32px 32px;
-    background-position: center;
-    background-color: #121212;
-
+    background-color: #000000;
     color: #362b54;
-    text-align: center;
-    padding-top: 50px;
+
+    overflow: hidden;
+
+}
+
+.ascii {
+
+    font-family: monospace;
+    white-space: pre;
+    text-align: left;
+    font-size: 18px;
+    color: pink;
+
+    height: 100vh;
+    align-items: center;
+}
+
+#ascii-art {
+
+    color: rgb(234, 196, 251);
+    display: flex;
+    justify-content: center;
+
+}
+
+#ascii-art:hover {
+
+    cursor: pointer;
 
 }
 
