@@ -1,0 +1,5 @@
+1: helloooo! how are you doing todayyyy?
+2: do you like my website so far?
+3: type 'help' to get a list of commands!!
+4: this splash text thing finally works woohooopo0ooo!!
+5: yeah i know this cursor isn't supposed to blink while this is being typed but whatever shhhhhhh

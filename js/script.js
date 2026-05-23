@@ -11,15 +11,15 @@
 // im keeping this ^^ justtt in case.
 
 const frameFiles = [
-    "ascii-frames/frame0.txt",
-    "ascii-frames/frame1.txt",
-    "ascii-frames/frame2.txt",
-    "ascii-frames/frame3.txt",
-    "ascii-frames/frame4.txt",
-    "ascii-frames/frame5.txt",
-    "ascii-frames/frame6.txt",
-    "ascii-frames/frame7.txt",
-    "ascii-frames/frame8.txt",
+    "textfiles/frame0.txt",
+    "textfiles/frame1.txt",
+    "textfiles/frame2.txt",
+    "textfiles/frame3.txt",
+    "textfiles/frame4.txt",
+    "textfiles/frame5.txt",
+    "textfiles/frame6.txt",
+    "textfiles/frame7.txt",
+    "textfiles/frame8.txt"
 ]
 
 let currIndex = 0; // the current frame we are on
@@ -47,7 +47,7 @@ async function animateAscii() {
 
     loopFrames(); // call this once by itself so the art automatically loads!
 
-    setInterval(loopFrames, 50);
+    setInterval(loopFrames, 100);
 
 }
 
@@ -61,3 +61,180 @@ function asciiClick() {
 }
 
 ascii.onclick = asciiClick;
+
+// code for the blinking cursors
+const blockCursor = document.getElementById("block-cursor");
+const underscoreCursor = document.getElementById("underscore-cursor");
+let cursorShown = true;
+
+function toggleCursors() {
+
+    if (cursorShown) {
+        blockCursor.classList.add("hidden");
+        underscoreCursor.classList.remove("hidden");
+    } else {
+        blockCursor.classList.remove("hidden");
+        underscoreCursor.classList.add("hidden");
+    }
+
+    cursorShown = !cursorShown;
+
+}
+
+setInterval(toggleCursors, 500);
+
+// code for inputting text into the "terminal" ! also don't make fun of my javadoc T_T
+const textEntry = document.getElementById("text-entry");
+let text = "> ";
+let currentChar = 3; // this will be used so the user can't delete the "> " at the beginning of each line
+
+/**
+ * Gets characters typed by the user, and if they match a command, carry out that command.
+ * 
+ * @param {*} e, the "keydown" event 
+ * @returns 
+ */
+function updateText(e) {
+
+    e.preventDefault(); // i don't really know why, but when you press backspace, it takes you to the testing page lol. so this prevents that from happening
+
+    const lastLineBreak = text.lastIndexOf("\n> ");
+
+    if (e.key === 'Backspace') { // if you press backspace, it will actually delete (needed since this isn't technically an input box)
+
+        if (currentChar == 3) return; // now, you can't delete stuff before the "> "
+
+        text = text.slice(0, -1);
+        currentChar--;
+        textEntry.textContent = text;
+        return;
+    } else if (e.key === 'Tab') { // tab will just add four spaces (not 8, git bash D:< )
+        text += "    ";
+        textEntry.textContent = text;
+        return;
+    }
+
+    if (e.key === 'Enter') { // check thru the list of "commands" to determine what to do when enter is pressed
+
+        checkCommand(lastLineBreak);
+
+    }
+
+    if (e.key.length > 1) return; // without this, when you pressed something like the alt key, it would literally type out "Alt" to the terminal lmfao
+
+    // add whatever letter you pressed down
+    text += e.key;
+    currentChar++;
+    textEntry.textContent = text;
+
+}
+
+function checkCommand(lastLineBreak) {
+
+    // this will get the most recent typed text after the latest newline
+    const newLine = text.substring(lastLineBreak + 3);
+
+        switch (newLine.toLowerCase()) { // i know it's only one case so far but switch case allows me to make more commands later down the line suuuuper easily
+
+            case ('help'):
+                text += '\n';
+                text += "list of commands :3\n";
+                text += "'help': brings up this page!\n";
+                text += "'enter': brings you to the testing page.\n"
+                text += "> ";
+
+                currentChar = 3;
+                textEntry.textContent = text;
+                return;
+
+            case ('enter'):
+                window.location.href = "testing/index.html";
+                return;
+            
+            case (''):
+                return;
+
+            default: // if there isn't a command that matches with what is typed, just add a newline
+                text += "\n> ";
+
+                currentChar = 3;
+                textEntry.textContent = text;
+                return;
+
+        }
+
+}
+
+document.addEventListener("keydown", updateText); // subscribeee  to the newsletter
+
+// code for the splash text!
+const splashTextFile = "textfiles/splash-text.txt";
+const splashTextContainer = document.getElementById("splash-text");
+let splashText = "";
+
+/**
+ * Picks a random line from textfiles/splash-text.txt, then puts it on the page.
+ * 
+ */
+function randomSplashText() {
+
+    const numLines = numberInstancesOf(splashText, '\n') + 1; // + 1 since the file doesn't end in a new line
+    
+    const randomLine = Math.floor(Math.random() * numLines) + 1; // pick a random number
+    const lineBegin = randomLine.toString() + ": "
+    const beginningIndex = splashText.indexOf(lineBegin) + lineBegin.length; // gets the beginning of the splash text (after "#: ")
+    
+    let endIndex = splashText.length; // this won't be overwritten if we picked the very last splash text, so this index value will work
+
+    for (let i = beginningIndex; i < splashText.length; i++) { // this will find the next '\n'
+        if (splashText[i] === '\n') {
+            endIndex = i;
+            break;
+        }
+    }
+
+    const splash = splashText.substring(beginningIndex, endIndex); // now we have the splash!
+
+    iterateSplash(splash); // this will make it so the splash appears one by one instead of instantly
+
+}
+
+// helper methods for ^^
+function numberInstancesOf(targetString, targetChar) {
+
+    let count = 0;
+    for (let i = 0; i < targetString.length; i++) {
+        if (targetString[i] === targetChar) count++;
+    }
+    return count;
+
+}
+
+async function loadSplashText() {
+
+    const response = await fetch(splashTextFile); // await keyword pauses the rest of the function until we get this response
+
+    splashText = await response.text(); // this turns the txt file into the actual string
+
+    randomSplashText(); // now that the file is loaded, generate the random line
+
+}
+
+async function iterateSplash(splash) {
+
+    const splashLength = splash.length;
+    let containerText = "";
+
+    for (let i = 0; i < splashLength; i++) {
+        containerText += splash[i];
+        splashTextContainer.textContent = containerText;
+        await delay(100);
+    }
+
+}
+
+function delay(ms) { // method code from sanfwin.medium.com !!!!
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+window.onload = loadSplashText;

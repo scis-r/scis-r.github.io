@@ -13,13 +13,19 @@ body {
 
 }
 
+.hidden {
+
+    display: none;
+
+}
+
 .ascii {
 
     font-family: monospace;
     white-space: pre;
     text-align: left;
     font-size: 18px;
-    color: pink;
+    color: rgb(234, 196, 251);
 
     height: 100vh;
     align-items: center;
@@ -27,7 +33,6 @@ body {
 
 #ascii-art {
 
-    color: rgb(234, 196, 251);
     display: flex;
     justify-content: center;
 
@@ -36,6 +41,18 @@ body {
 #ascii-art:hover {
 
     cursor: pointer;
+
+}
+
+#text-entry {
+
+    color: rgb(198, 245, 219);
+
+}
+
+#block-cursor {
+
+    color: rgb(198, 245, 219);
 
 }
 
