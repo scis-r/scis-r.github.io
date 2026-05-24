@@ -1,0 +1,29 @@
+html {
+    min-height: 100%;
+}
+
+body {
+
+    font-family: "Lora", sans-serif;
+
+    background-color: #000000;
+    color: #362b54;
+
+    overflow: hidden;
+
+}
+
+#ascii-anim {
+
+    font-family: monospace;
+    white-space: pre;
+    text-align: left;
+    font-size: 18px;
+    color: rgb(234, 196, 251);
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+}
