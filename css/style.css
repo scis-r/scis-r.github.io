@@ -9,9 +9,19 @@ body {
     background-color: #000000;
     color: #362b54;
 
-    overflow: hidden;
+    overflow-x: hidden;
+
+    -ms-overflow-style: none; /* ## no scrollbar for IE & Edge (keeps functionality tho!) */
+    scrollbar-width: none; /* ## no for firefox */
 
 }
+
+.body::-webkit-scrollbar {
+    display: none; /* ## no for chrome safari opera */
+}
+
+/* ## shoutout to w3schools for that scrollbar code! <3 */
+/* hopefully this works cuz im on vivaldi so i have no idea!!!!! */
 
 .hidden {
 
@@ -54,6 +64,7 @@ body {
 #text-entry {
 
     color: rgb(198, 245, 219);
+    text-wrap: wrap;
 
 }
 

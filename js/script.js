@@ -8,7 +8,7 @@
 
 // window.onload = randomBackgroundTile(5);
 
-// im keeping this ^^ justtt in case.
+// im keeping this ^^ justtt in case. leftovers from an older version of this site.
 
 const frameFiles = [
     "textfiles/frame0.txt",
@@ -174,47 +174,118 @@ function checkCommand(lastLineBreak) {
     // this will get the most recent typed text after the latest newline
     const newLine = text.substring(lastLineBreak + 3);
 
-        switch (newLine.toLowerCase()) { // i know it's only one case so far but switch case allows me to make more commands later down the line suuuuper easily
+        switch (newLine.toLowerCase()) {
 
             case ('help'):
                 text += '\n';
                 text += "list of commands :3\n";
                 text += "'help': brings up this page!\n";
-                text += "'enter': brings you to the home page, the real heart of the site.\n";
+                text += "'whatisthis': brings up some information about this page, along side some other commands to \"navigate\" the site!\n";
                 text += "'clear': clears what you've typed.\n";
                 text += "'splash': refreshes and repicks the splash text! (don't run this while the splash text is typing lmao)\n";
+                text += "also, if you click on the little face above the terminal, you can go to my testing page, where i play around with more traditional HTML\n";
+                
                 text += "> ";
-
                 currentChar = 2;
                 textEntry.textContent = text;
-                return;
+                break;
 
-            case ('enter'):
-                window.location.href = "home.html";
-                return;
+            case ('whatisthis'):
+                text += "\nhi! my name is scisr, and this is my little website (even though it's more of a terminal so far lolll)!\n";
+                text += "i wanted to get into web development, and i've always wanted a little space where i could express myself, so i taught myself how to code for this!\n";
+                text += "so, if you want to keep exploring, here are some more commands you can do to learn more about me!\n";
+
+                text += "'music': a list of songs and artists i really enjoy listening to!\n";
+                text += "'projects': a list of projects that i've made or that i'm currently working on!\n";
+                text += "'scisr': more general things about myself!\n";
+
+                text += "side note: by no means am i a good web programmer, most of this code is horrible ,_, this is just for fun!!!\n";
+                // text += "'': \n";
+
+                text += "> ";
+                currentChar = 2;
+                textEntry.textContent = text;
+                break;
+
+            case ('music'):
+                text += "\nnot programmed yet bruh!\n";
+                text += "probably a redirect to a new page? maybe more \"traditional\" html, ykwim.\n";
+
+                text += "> ";
+                currentChar = 2;
+                textEntry.textContent = text;
+                break;
+
+            case ('projects'):
+                text += "\n----- finished projects! -----\n";
+                text += "\n";
+
+                text += "rgb fan controller (name pending)\n";
+                text += "--> a program coded in C# that changes the colors of my pc cases's fans depending on what song i'm listening to on spotify!\n";
+                text += "--> it reads the pixels from the screen on my second monitor when i fullscreen spotify, going up and down to get a nice breathing effect!\n";
+                text += "--> it was a fun challenge having to figure out the Corsair SDK (jk it was very not fun T_T but finished project was great)\n";
+                text += "--> project link: not yet (remember to put it on github sometime lol)\n"; // TODO: publish it to github and put the link here
+                text += "\n";
+
+                text += "----- current projects! -----\n";
+                text += "\n";
+
+                text += "scisr.net (this website!!!)\n";
+                text += "--> this is the site you're currently on! isn't that so cool???\n";
+                text += "--> to go more in depth as to what i was talking about earlier, i've always wanted some way to express myself quote unquote \"artistically\".\n";
+                text += "--> the problem is that i'm not very good at turning my creativity into something tangible. i'm not great at drawing, sadly :(\n";
+                text += "--> however, i'm decent at coding, so i figured a personal website could be a good way to fill that hole!\n";
+                text += "--> thus, this website was born, the brainchild of my creativity. don't worry, it won't all be like this, i have more plans for this site soon.\n";
+                text += "--> project link: https://github.com/scis-r/scis-r.github.io\n";
+                text += "\n";
+
+                text += "----- planned projects! -----\n";
+                text += "\n";
+
+                text += "chess engine o_o\n";
+                text += "--> i'm planning on programming my own chess engine, completely from scratch, with no outside help at all!\n";
+                text += "--> that means no ai (though for me that's a given), no googling how to code one, not even watching a youtube video explaining how they work!\n";
+                text += "--> this will be a huge project for me, but the plan is to program the engine in Java, then get a VPS to run it in the backend for this very website!\n";
+                text += "--> it'll be fun, but very, very difficult. expect something soon(ish)!\n";
+                text += "--> project link: not done yet sillyyy!\n";
+                
+                text += "> ";
+                currentChar = 2;
+                textEntry.textContent = text;
+                break;
+
+            case ('scisr'):
+                text += "\nTODO: make this real!\n";
+                text += "probablyyy another redirect lol\n";
+
+                text += "> ";
+                currentChar = 2;
+                textEntry.textContent = text;
+                break;
             
             case ('clear'):
                 text = "> ";
                 currentChar = 2;
                 textEntry.textContent = text;
-                return;
+                break;
             
             case ('splash'):
                 randomSplashText(0);
                 text += "\n> ";
                 currentChar = 2;
                 textEntry.textContent = text;
-                return;
+                break;
 
             case (''):
-                return;
+                break;
 
-            default: // if there isn't a command that matches with what is typed, just add a newline
-                text += "\n> ";
+            default: // if there isn't a command that matches with what is typed, add error msg
+                text += "\nnot a valid command :( type 'help' for a list of commands!\n";
 
+                text += "> ";
                 currentChar = 2;
                 textEntry.textContent = text;
-                return;
+                break;
 
         }
 

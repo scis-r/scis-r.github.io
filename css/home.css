@@ -9,7 +9,7 @@ body {
     background-color: #000000;
     color: #362b54;
 
-    overflow: hidden;
+    overflow-x: hidden;
 
 }
 
@@ -21,9 +21,47 @@ body {
     font-size: 18px;
     color: rgb(234, 196, 251);
 
-    height: 100vh;
+    height: 10%; /* lowk hardcoded, probably change later */
 
     display: flex;
     justify-content: center;
 
 }
+
+/*
+
+.body-container {
+
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+HEADER STYLING!!!!
+
+.body-header {
+
+    height: 150px;
+    margin-top: 25px;
+    background-color: aqua;
+
+}
+
+.header-content {
+
+
+
+}
+
+.header-navbar {
+
+}
+
+BODY STYLING!!!
+
+.body-content {
+    height: 850px;
+    background-color: white;
+}
+
+*/
