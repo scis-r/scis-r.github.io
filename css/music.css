@@ -1,0 +1,106 @@
+html {
+    min-height: 100%;
+}
+
+body {
+
+    font-family: monospace, "Lora", sans-serif;
+
+    background-color: #000000;
+    color: #362b54;
+
+    overflow-x: hidden;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+#ascii-anim {
+
+    font-family: monospace;
+    white-space: pre;
+    text-align: left;
+    font-size: 18px;
+    color: rgb(234, 196, 251);
+
+    height: 10%; /* lowk hardcoded, probably change later */
+
+    display: flex;
+    justify-content: center;
+
+}
+
+#ascii-anim:hover {
+    cursor: pointer;
+}
+
+.new-section {
+    font-size: 18px;
+    color: rgb(234, 196, 251);
+}
+
+.section-content {
+    font-size: 18px;
+}
+
+.section-content p {
+    font-size: 18px;
+    white-space: pre;
+    display: flex;
+    justify-content: center;
+}
+
+#current-song-toggle, #current-song-bottom {
+    color: rgb(198, 245, 219);
+}
+
+#current-song-toggle:hover {
+    cursor: pointer;
+}
+
+#current-song {
+    height: 200px;
+}
+
+#current-song-flair {
+    flex: 1;
+    white-space: pre;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#current-song-info {
+    max-width: 20%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+#current-song-image {
+    max-width: 20%;
+    justify-content: flex-start;
+    display: flex;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+#current-song-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+#current-name, #current-artist {
+    color: white;
+}

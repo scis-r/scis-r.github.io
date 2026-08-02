@@ -48,6 +48,10 @@ body {
 
 }
 
+#ascii-anim:hover {
+    cursor: pointer;
+}
+
 #ascii-face {
 
     display: flex;

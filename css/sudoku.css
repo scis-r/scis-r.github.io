@@ -28,40 +28,6 @@ body {
 
 }
 
-/*
-
-.body-container {
-
-    max-width: 1000px;
-    margin: 0 auto;
-
+#ascii-anim:hover {
+    cursor: pointer;
 }
-
-HEADER STYLING!!!!
-
-.body-header {
-
-    height: 150px;
-    margin-top: 25px;
-    background-color: aqua;
-
-}
-
-.header-content {
-
-
-
-}
-
-.header-navbar {
-
-}
-
-BODY STYLING!!!
-
-.body-content {
-    height: 850px;
-    background-color: white;
-}
-
-*/
